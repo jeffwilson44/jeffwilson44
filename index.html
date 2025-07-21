@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon with logo -->
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32x32?text=SAP">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Air Pro — Wholesale Sneakers Miami</title>
+    <style>
+        :root {
+            --primary: #2B2B2B;
+            --secondary: #3C3C3C;
+            --accent: #E63946;
+            --accent2: #FFA62B;
+            --white: #F0F0F0;
+            --gray: #888888;
+            --shadow: rgba(0,0,0,0.12);
+            --card-gradient: linear-gradient(135deg, #f9f9f9, #ececec);
+            --section-gradient: linear-gradient(135deg, #f9f9f9, #ffd7d9);
+            --section-gradient2: linear-gradient(135deg, #f0f0f0, #ededed);
+            --button-solid: #E63946;
+            --button-solid-hover: #D62828;
+            --contact-bg: #333333;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            background: var(--section-gradient2);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex; justify-content: space-between;
+            align-items: center; background: var(--secondary);
+            padding:1rem 2rem; box-shadow:0 2px 8px var(--shadow);
+            position:sticky;top:0;z-index:10;
+        }
+        .navbar-brand { display:flex; align-items:center; }
+        .logo-placeholder {
+            width: 32px;
+            height: 32px;
+            background: var(--accent2);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 0.6rem;
+        }
+        .business-name {
+            font-size:2rem;font-weight:bold;
+            letter-spacing:2px;color:var(--accent2);
+        }
+        .navbar-links { list-style:none; display:flex; gap:1.8rem; }
+        .nav-link {
+            color: var(--white); text-decoration:none;
+            font-size:1.1rem; position:relative;
+        }
+        .nav-link::after {
+            content:''; display:block; height:2px;
+            width:0; background:var(--accent2);
+            transition:width .3s; margin-top:4px;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width:100%; }
+        .hero-section {
+            min-height:100vh; display:flex;
+            align-items:center; justify-content:center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color:#fff; position:relative; text-align:left;
+        }
+        .hero-content {
+            max-width:800px; margin:2rem;
+            animation:fadeInUp 1s ease-out;
+            text-shadow:0 2px 8px #000c;
+        }
+        .hero-section h1 {
+            font-size:3rem; margin-bottom:1rem;
+        }
+        .hero-highlight { color: var(--accent2); font-weight:700; }
+        .hero-section p {
+            font-size:1.2rem; margin-bottom:2rem;
+        }
+        .hero-badges { display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+        .badge {
+            background:var(--accent); color:#fff;
+            padding:0.5rem 1.2rem; border-radius:12px;
+        }
+        .cta-button {
+            background:var(--button-solid); color:#fff;
+            padding:1rem 2.5rem; border:none;
+            font-size:1.1rem; cursor:pointer;
+            border-radius:25px;
+            transition:transform .2s;
+        }
+        .cta-button:hover { transform:translateY(-3px); background:var(--button-solid-hover); }
+
+        .services-section { background: var(--section-gradient); padding:3.5rem 2rem; text-align:center; }
+        .services-section h2 { font-size:2.5rem; margin-bottom:2rem; }
+        .services-list { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
+        .service-card {
+            background: var(--card-gradient); border-radius:15px;
+            padding:1.8rem; max-width:320px; text-align:center;
+            box-shadow:0 2px 18px var(--shadow);
+        }
+        .image-placeholder {
+            height: 180px;
+            background: var(--accent2);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 { color: var(--accent); margin-bottom:0.8rem; }
+        .service-card p { color: var(--primary); margin-bottom:1.2rem; }
+        .service-cta {
+            background:var(--button-solid); color:#fff;
+            padding:0.7rem 1.8rem; border:none;
+            border-radius:20px; cursor:pointer;
+        }
+        .service-cta:hover { background:var(--button-solid-hover); }
+
+        .about-section { padding:4rem 2rem; background:var(--white); text-align:center; }
+        .about-section h2 { font-size:2.5rem; margin-bottom:1rem; color:var(--primary); }
+        .about-section p {
+            max-width:720px; margin:0 auto; font-size:1.1rem;
+            color:var(--gray); line-height:1.8;
+        }
+
+        .contact-section {
+            background:var(--contact-bg); padding:3.5rem 2rem; color:var(--white);
+            text-align:center;
+        }
+        .contact-info {
+            background:#444; padding:1.8rem; border-radius:15px;
+            max-width:480px; margin:1.5rem auto;
+        }
+        .contact-logo-large {
+            width: 160px;
+            height: 100px;
+            background: var(--accent2);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            margin: 0 auto 1rem;
+        }
+        .contact-location, .contact-phone { font-size:1.1rem; margin:0.5rem 0; }
+        .contact-phone a { color:var(--accent2); text-decoration:none; font-weight:bold; }
+        .contact-form {
+            margin-top:2rem; display:flex; flex-direction:column;
+            gap:1rem; max-width:400px; margin-left:auto; margin-right:auto;
+        }
+        .contact-form input, .contact-form textarea {
+            padding:.9rem; border:none; border-radius:8px;
+            background:#555; color:#fff;
+        }
+        .contact-form button {
+            background:var(--button-solid); color:#fff;
+            padding:1rem; border:none; border-radius:20px;
+            cursor:pointer;
+        }
+        .contact-form button:hover { background:var(--button-solid-hover); }
+        .wave-divider svg { width:100%; height:60px; display:block; }
+        @keyframes fadeInUp {
+            from { opacity:0; transform:translateY(40px); }
+            to { opacity:1; transform:translateY(0); }
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="logo-placeholder">SAP</div>
+      <span class="business-name">Sneaker Air Pro</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#services" class="nav-link">Products</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+<section id="hero" style="
+  background: linear-gradient(135deg, #1d1d1d, #2b2b2b);
+  color: #F0F0F0;
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+">
+  <div style="
+    max-width: 960px;
+    margin: 0 auto;
+  ">
+  
+    <h1 style="
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    ">
+      Bulk Sneaker Inventory<br>
+      <span style="color: #FFA62B;">From Brands That Sell</span>
+    </h1>
+
+    <p style="
+      font-size: 1.2rem;
+      color: #CCCCCC;
+      max-width: 700px;
+      margin: 1rem auto 2.5rem;
+    ">
+      Supplying sneaker stores, boutiques, and resellers with premium athletic and designer footwear. Fast shipping, authentic stock, and real margins.
+    </p>
+
+    <button onclick="scrollToSection('services')" style="
+      background: #E63946;
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    " onmouseover="this.style.background='#D62828'" onmouseout="this.style.background='#E63946'">
+      Browse Our Catalog
+    </button>
+  </div>
+
+  <div style="
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  ">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px;">
+      <path d="M0,64L60,74.7C120,85,240,107,360,106.7C480,107,600,85,720,74.7C840,64,960,64,1080,80C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" fill="#1d1d1d"></path>
+    </svg>
+  </div>
+</section>
+
+  <div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32L60,48C...Z" fill="#fff" fill-opacity="1"/></svg></div>
+
+ <section id="services" class="products-section" style="
+  background: #1d1d1d;
+  color: #F0F0F0;
+  padding: 4rem 2rem;
+  text-align: center;
+">
+  <h2 style="
+    font-size: 2.7rem;
+    color: #FFA62B;
+    margin-bottom: 1rem;
+  ">Wholesale Sneaker Catalog</h2>
+
+  <p style="
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    color: #888888;
+  ">
+    From classic streetwear brands to luxury designer drops — our curated sneaker catalog is built for retailers, boutiques, and bulk buyers who need reliable supply at competitive prices.
+  </p>
+
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  ">
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Nike</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Air Force 1s, Dunks, Air Max and more — available in consistent bulk runs for storefronts and online sellers.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Adidas</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Top-selling models like Ultraboost, NMDs, and select Yeezys available for rapid distribution.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Jordan</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Retro 1s, 4s, and limited edition drops available for established resellers and sneaker stores.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Designer Sneakers</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Premium fashion sneakers from brands like Balenciaga, McQueen, Prada — ready for high-end stores.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Limited Releases</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Exclusive access to hype drops and regional-only releases for VIP-level partners.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+
+    <div style="
+      background: #2b2b2b;
+      border-left: 6px solid #E63946;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: left;
+      transition: transform 0.2s ease;
+    " onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+      <h3 style="color: #FFA62B; font-size: 1.5rem; margin-bottom: 0.6rem;">Custom Requests</h3>
+      <p style="color: #ccc; margin-bottom: 1.2rem;">Need something specific? We offer sourcing for niche or special bulk sneaker orders.</p>
+      <button style="
+        background: #E63946;
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      " onclick="scrollToSection('contact')">Inquire Now</button>
+    </div>
+  </div>
+</section>
+
+
+  <div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32L60,48C...Z" fill="#3C3C3C" fill-opacity="1"/></svg></div>
+
+  <section id="about" class="about-section">
+    <h2>About Sneaker Air Pro</h2>
+    <p>
+      Founded in Miami, Sneaker Air Pro is a leading wholesale distributor of premium athletic footwear.
+      We partner directly with top brands to offer authentic sneakers at wholesale prices. Our mission is to equip
+      retailers with curated inventory, competitive margins, and fast shipping. With a Miami-based warehouse and
+      U.S.-wide logistics partnerships, we make bulk ordering easy, reliable, and profitable.
+    </p>
+  </section>
+
+  <div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32L60,48C...Z" fill="#fff" fill-opacity="1"/></svg></div>
+
+ <section id="contact" style="
+  background: #1d1d1d;
+  color: #F0F0F0;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+">
+  <h2 style="
+    font-size: 2.7rem;
+    color: #FFA62B;
+    margin-bottom: 1rem;
+  ">
+    Get in Touch
+  </h2>
+  <p style="
+    font-size: 1.1rem;
+    color: #CCCCCC;
+    max-width: 700px;
+    margin: 0 auto 1.8rem;
+  ">
+    Whether you're placing your first bulk sneaker order or just need more info — our team is ready to help. Expect a response within 24 hours.
+  </p>
+
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+  ">
+    <!-- Business Info -->
+    <div style="
+      flex: 1 1 300px;
+      background: #2b2b2b;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: left;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+    ">
+      <h3 style="color: #FFA62B; margin-bottom: 1rem;">Business Information</h3>
+      <p style="margin: 0.5rem 0;"><i class="fa fa-map-marker"></i> 2614 Melissa Ct, Melbourne, FL 32934</p>
+      <p style="margin: 0.5rem 0;"><i class="fa fa-phone"></i> <a href="tel:+19045804936" style="color: #FFA62B; text-decoration: none;">(904) 580‑4936</a></p>
+      <p style="margin: 0.5rem 0;"><i class="fa fa-envelope"></i> <a href="mailto:contact@sneakerairpro.com" style="color: #FFA62B; text-decoration: none;">contact@sneakerairpro.com</a></p>
+      <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #BBBBBB;">
+        Available Monday–Friday, 9AM–6PM EST<br>
+        Response time: within 24 business hours.
+      </p>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="
+      flex: 1 1 300px;
+      background: #2b2b2b;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+    ">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.'); this.reset();" style="
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      ">
+        <input type="text" placeholder="Your Name" required style="
+          padding: .9rem;
+          border: none;
+          border-radius: 8px;
+          background: #444;
+          color: #fff;
+        ">
+        <input type="email" placeholder="Your Email" required style="
+          padding: .9rem;
+          border: none;
+          border-radius: 8px;
+          background: #444;
+          color: #fff;
+        ">
+        <textarea placeholder="Your Message" rows="4" required style="
+          padding: .9rem;
+          border: none;
+          border-radius: 8px;
+          background: #444;
+          color: #fff;
+        "></textarea>
+        <button type="submit" style="
+          background: #E63946;
+          color: #fff;
+          padding: 1rem;
+          border: none;
+          border-radius: 30px;
+          font-weight: bold;
+          cursor: pointer;
+        " onmouseover="this.style.background='#D62828'" onmouseout="this.style.background='#E63946'">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px;">
+      <path d="M0,64L60,74.7C120,85,240,107,360,106.7C480,107,600,85,720,74.7C840,64,960,64,1080,80C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" fill="#fff"></path>
+    </svg>
+  </div>
+</section>
+
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
